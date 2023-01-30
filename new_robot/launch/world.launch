@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find new_robot)/worlds/lane2.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <include file="$(find new_robot)/launch/my_robot_xacro.launch" />
+    <!--node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find new_robot)/urdf/new_robot.urdf -urdf -model new_robot" output="screen" /-->
+
+</launch>
